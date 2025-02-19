@@ -1,3 +1,5 @@
+import timeit
+
 coins = [50, 25, 10, 5, 2, 1]
 
 # A greedy algorithm for finding coins
@@ -43,9 +45,16 @@ if __name__ == "__main__":
 
     # Test case
     amount = 113
+
+    # Measure time for the greedy algorithm
+    greedy_time = timeit.timeit(lambda: find_coins_greedy(amount), number=1)
+
+    # Measure time for the dynamic programming algorithm
+    min_coins_time = timeit.timeit(lambda: find_min_coins(amount), number=1)
+
     greedy_result = find_coins_greedy(amount)
     min_coins_result = find_min_coins(amount)
 
     print(f"\nCase when amount = {amount}:")
-    print(f"A greedy algorithm for {amount}: {greedy_result}")
-    print(f"A dynamic programming algorithm for {amount}: {min_coins_result}")
+    print(f"A greedy algorithm for {amount}: {greedy_result} (Time taken: {greedy_time:.6f} seconds)")
+    print(f"A dynamic programming algorithm for {amount}: {min_coins_result} (Time taken: {min_coins_time:.6f} seconds)")
