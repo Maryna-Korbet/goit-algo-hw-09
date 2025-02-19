@@ -14,17 +14,11 @@ This project implements two functions for a cash register system that determines
    - The algorithm calculates the optimal solution for each amount from 0 to the desired amount, storing the number of coins for each possibility. In the end, we get the minimum number of coins for the desired amount.
    - Dynamic programming always guarantees the minimum number of coins, but its time complexity might be higher compared to the greedy algorithm.
 
-```
-
 ### Output:
-
-```
 
 Case when amount = 113:
 A greedy algorithm for 113: {50: 2, 10: 1, 2: 1, 1: 1} (Time taken: 0.000010 seconds)
 A dynamic programming algorithm for 113: {1: 1, 2: 1, 10: 1, 50: 2} (Time taken: 0.000449 seconds)
-
-```
 
 ## Time Complexity
 
@@ -45,5 +39,3 @@ A dynamic programming algorithm for 113: {1: 1, 2: 1, 10: 1, 50: 2} (Time taken:
 
 - The greedy algorithm is more time-efficient but does not guarantee the optimal result. It is suitable for scenarios where speed is essential, and the coin denominations do not lead to situations where the algorithm might fail.
 - Dynamic programming guarantees the optimal result, but its time complexity can be significant for large amounts, making it less efficient than the greedy algorithm for larger sums.
-
-```
